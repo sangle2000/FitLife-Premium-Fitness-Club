@@ -148,19 +148,105 @@
         </div>
     </section>
 
-    <!-- 5. CALL TO ACTION & FOOTER SECTION -->
-    <footer id="contact" class="bg-dark pt-20 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 text-center mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4">Sẵn sàng thay đổi vóc dáng?</h2>
-            <p class="text-gray-400 mb-8 max-w-xl mx-auto">Đăng ký thành viên ngay hôm nay để nhận ưu đãi giảm giá lên tới 30% cho tháng đầu tiên!</p>
+    <!-- BỔ SUNG: 4.5 CHƯƠNG TRÌNH LỊCH TẬP (Thực hành Table) -->
+    <section id="schedule" class="py-20 bg-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-2 uppercase">Lịch học tuần này</h2>
+                <div class="w-16 h-1 bg-brand mx-auto"></div>
+                <p class="text-gray-400 mt-4">Thực hành HTML Table kết hợp Tailwind CSS</p>
+            </div>
+
+            <!-- Bảng chứa lịch học (Responsive với overflow-x-auto) -->
+            <div class="overflow-x-auto bg-card rounded-lg border border-gray-800 shadow-lg">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-900 border-b border-gray-700">
+                            <th class="p-4 font-bold text-white uppercase text-sm">Thời gian</th>
+                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Hai</th>
+                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Tư</th>
+                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Sáu</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
+                            <td class="p-4 font-medium text-brand">06:00 - 07:30</td>
+                            <td class="p-4">Yoga Thiền Định <br><span class="text-xs text-gray-500">PT. Elena</span></td>
+                            <td class="p-4">Cardio Đốt Mỡ <br><span class="text-xs text-gray-500">PT. David</span></td>
+                            <td class="p-4">Thể Hình Sức Mạnh <br><span class="text-xs text-gray-500">PT. Marcus</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors bg-gray-900/40">
+                            <td class="p-4 font-medium text-brand">17:00 - 18:30</td>
+                            <td class="p-4">Thể Hình Sức Mạnh</td>
+                            <td class="p-4">Zumba Dance</td>
+                            <td class="p-4">Boxing Cơ Bản</td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="p-4 font-medium text-brand">19:00 - 20:30</td>
+                            <td class="p-4">CrossFit</td>
+                            <td class="p-4">Yoga Thư Giãn</td>
+                            <td class="p-4">Cardio Nâng Cao</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CALL TO ACTION & FOOTER SECTION (Thực hành Form đầy đủ) -->
+    <footer id="contact" class="bg-card pt-20 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 mb-20 flex flex-col md:flex-row gap-12">
             
-            <!-- Form giả lập bằng Flexbox -->
-            <form class="flex flex-col sm:flex-row justify-center gap-2 max-w-lg mx-auto">
-                <input type="email" placeholder="Nhập email của bạn..." class="px-4 py-3 rounded bg-card border border-gray-700 text-white focus:outline-none focus:border-brand w-full">
-                <button type="button" class="bg-brand text-white px-6 py-3 rounded font-bold hover:bg-rose-600 w-full sm:w-auto whitespace-nowrap">
-                    Nhận Ưu Đãi
-                </button>
-            </form>
+            <!-- Phần thông tin -->
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl font-bold text-white mb-4">Sẵn sàng thay đổi?</h2>
+                <p class="text-gray-400 mb-6">Đăng ký thành viên ngay hôm nay để nhận ưu đãi giảm giá lên tới 30% cho tháng đầu tiên. Điền thông tin vào form bên cạnh để chuyên viên của chúng tôi liên hệ với bạn.</p>
+                
+                <ul class="text-gray-300 space-y-3">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-brand"></i> Số 123, Đường ABC, Quận XYZ, Hà Nội</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-brand"></i> 0123.456.789</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-brand"></i> lienhe@fitlife.vn</li>
+                </ul>
+            </div>
+
+            <!-- Form đăng ký (Thực hành HTML Forms: input, select, checkbox, submit) -->
+            <div class="w-full md:w-1/2 bg-dark p-6 rounded-lg border border-gray-800 shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-4">Form Đăng Ký Tư Vấn</h3>
+                
+                <form action="#" method="POST" class="space-y-4">
+                    <!-- Trọng tâm thực hành Form -->
+                    <div>
+                        <label for="fullname" class="block text-sm font-medium text-gray-400 mb-1">Họ và tên *</label>
+                        <input type="text" id="fullname" name="fullname" required placeholder="Nhập họ tên của bạn" 
+                            class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-400 mb-1">Số điện thoại *</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Ví dụ: 0987654321" 
+                            class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="goal" class="block text-sm font-medium text-gray-400 mb-1">Mục tiêu tập luyện</label>
+                        <select id="goal" name="goal" class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-gray-300 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+                            <option value="lose_weight">Giảm cân / Đốt mỡ</option>
+                            <option value="gain_muscle">Tăng cơ / Tăng cân</option>
+                            <option value="health">Cải thiện sức khỏe chung</option>
+                            <option value="yoga">Học Yoga / Dẻo dai</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-start gap-2 pt-2">
+                        <input type="checkbox" id="agree" name="agree" required class="mt-1 accent-brand">
+                        <label for="agree" class="text-sm text-gray-400">Tôi đồng ý nhận thông tin tư vấn qua điện thoại và email quy định.</label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand text-white py-3 rounded font-bold hover:bg-rose-600 transition-colors mt-4">
+                        Gửi Đăng Ký
+                    </button>
+                </form>
+            </div>
         </div>
 
         <div class="bg-black py-6 text-center text-sm text-gray-500">
