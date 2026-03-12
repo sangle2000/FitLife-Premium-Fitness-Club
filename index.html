@@ -4,253 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitLife - Premium Fitness Club</title>
-    <!-- Tailwind CSS v3 via CDN - Phù hợp cho việc học và thực hành nhanh -->
+    <!-- Tailwind CSS v3 via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Cấu hình màu sắc cơ bản -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: '#f43f5e', // Màu đỏ hồng chuẩn của Tailwind (Rose 500)
-                        dark: '#111827',  // Màu nền tối (Gray 900)
-                        card: '#1f2937'   // Màu nền cho các thẻ (Gray 800)
+                        brand: '#f43f5e',
+                        dark: '#111827',
+                        card: '#1f2937'
                     }
                 }
             }
         }
     </script>
-    <!-- Font Awesome cho các icon -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-dark text-gray-300 font-sans antialiased">
+<body class="bg-dark text-gray-300 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- 1. NAVIGATION BAR (Thanh điều hướng) -->
-    <!-- Dùng Flexbox để dàn trang: Logo bên trái, Menu bên phải -->
+    <!-- 1. NAVIGATION BAR -->
     <nav class="bg-card py-4 sticky top-0 z-50 shadow-lg">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-2xl font-bold text-white flex items-center gap-2">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center gap-2">
                 <i class="fa-solid fa-dumbbell text-brand"></i>
                 FIT<span class="text-brand">LIFE</span>
             </a>
             
-            <!-- Links (Sẽ ẩn trên điện thoại nhỏ để tránh lỗi giao diện do chưa học JS) -->
+            <!-- Links -->
             <div class="hidden sm:flex space-x-6">
-                <a href="#home" class="hover:text-brand transition-colors text-white font-medium">Trang chủ</a>
-                <a href="#features" class="hover:text-brand transition-colors font-medium">Dịch vụ</a>
-                <a href="#classes" class="hover:text-brand transition-colors font-medium">Lớp học</a>
-                <a href="#contact" class="hover:text-brand transition-colors font-medium">Liên hệ</a>
+                <a href="index.html" class="hover:text-brand transition-colors text-white font-medium">Trang chủ</a>
+                <a href="index.html#features" class="hover:text-brand transition-colors text-gray-300 font-medium">Dịch vụ</a>
+                <a href="classes.html" class="hover:text-brand transition-colors text-gray-300 font-medium">Lớp học</a>
+                <a href="contact.html" class="hover:text-brand transition-colors text-gray-300 font-medium">Liên hệ</a>
             </div>
             
             <!-- Nút Đăng ký -->
-            <a href="#contact" class="bg-brand hover:bg-rose-600 text-white px-5 py-2 rounded font-bold transition-colors">
+            <a href="contact.html" class="bg-brand hover:bg-rose-600 text-white px-5 py-2 rounded font-bold transition-colors">
                 Tham gia ngay
             </a>
         </div>
     </nav>
 
-    <!-- 2. HERO SECTION (Phần giới thiệu nổi bật) -->
-    <!-- Dùng Flexbox, chiều cao tối thiểu 500px, có ảnh nền -->
-    <section id="home" class="relative h-[600px] flex items-center justify-center text-center">
-        <!-- Lớp ảnh nền mờ -->
-        <div class="absolute inset-0 bg-black/70 z-0"></div>
-        <img src="./assets/images/hero_fitness_1773061859337.png" alt="Gym Background" class="absolute inset-0 w-full h-full object-cover -z-10">
-        
-        <!-- Nội dung -->
-        <div class="relative z-10 max-w-3xl px-4">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 uppercase">
-                Phá vỡ <span class="text-brand">giới hạn</span> bản thân
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">
-                Cơ sở vật chất hiện đại, huấn luyện viên chuyên nghiệp. Bắt đầu hành trình thay đổi vóc dáng của bạn ngay hôm nay!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-brand text-white px-8 py-3 rounded text-lg font-bold hover:bg-rose-600 transition-colors">
-                    Đăng ký tập thử MIỄN PHÍ
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. FEATURES SECTION (Các ưu điểm/Dịch vụ) -->
-    <!-- Dùng CSS Grid để chia cột -->
-    <section id="features" class="py-20 bg-dark text-center">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-white mb-2 uppercase">Tại sao chọn chúng tôi?</h2>
-            <div class="w-16 h-1 bg-brand mx-auto mb-12"></div> <!-- Đường gạch đỏ trang trí -->
-
-            <!-- Grid: 1 cột trên mobile, 3 cột trên tablet/desktop -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Thẻ 1 -->
-                <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
-                    <i class="fa-solid fa-dumbbell text-4xl text-brand mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-3">Thiết bị hiện đại</h3>
-                    <p class="text-gray-400">Trang bị 100% máy móc nhập khẩu mới nhất, đảm bảo hiệu quả tập luyện tối đa.</p>
-                </div>
-
-                <!-- Thẻ 2 -->
-                <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
-                    <i class="fa-solid fa-user-ninja text-4xl text-brand mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-3">PT Chuyên nghiệp</h3>
-                    <p class="text-gray-400">Đội ngũ huấn luyện viên có chứng chỉ quốc tế, nhiệt tình và theo sát học viên.</p>
-                </div>
-
-                <!-- Thẻ 3 -->
-                <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
-                    <i class="fa-regular fa-clock text-4xl text-brand mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-3">Mở cửa 24/7</h3>
-                    <p class="text-gray-400">Không gò bó thời gian. Tập luyện bất cứ khi nào phù hợp với lịch trình của bạn.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. CLASSES SECTION (Các lớp học) -->
-    <section id="classes" class="py-20 bg-card">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-2 uppercase">Lớp học tiêu biểu</h2>
-                <div class="w-16 h-1 bg-brand mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Lớp 1 -->
-                <div class="bg-dark rounded-lg overflow-hidden flex flex-col sm:flex-row">
-                    <!-- Ảnh chiếm 1/2 chiều rộng -->
-                    <img src="./assets/images/weight_lifting_1773061899821.png" alt="Thể hình" class="w-full sm:w-1/2 h-64 object-cover">
-                    <!-- Nội dung chiếm 1/2 chiều rộng -->
-                    <div class="p-6 flex flex-col justify-center w-full sm:w-1/2">
-                        <span class="text-brand font-bold text-sm mb-1 uppercase">Tăng cơ - Giảm mỡ</span>
-                        <h3 class="text-2xl font-bold text-white mb-3">Thể Hình Sức Mạnh</h3>
-                        <p class="text-gray-400 text-sm mb-4">Cải thiện sức mạnh cơ bắp với tạ tự do và máy móc chuyên dụng.</p>
-                        <a href="#" class="text-white hover:text-brand font-bold inline-flex items-center gap-2">
-                            Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Lớp 2 -->
-                <div class="bg-dark rounded-lg overflow-hidden flex flex-col sm:flex-row">
-                    <!-- Ảnh chiếm 1/2 chiều rộng -->
-                    <img src="./assets/images/yoga_class_1773061880929.png" alt="Yoga" class="w-full sm:w-1/2 h-64 object-cover">
-                    <!-- Nội dung chiếm 1/2 chiều rộng -->
-                    <div class="p-6 flex flex-col justify-center w-full sm:w-1/2">
-                        <span class="text-brand font-bold text-sm mb-1 uppercase">Thư giãn - Dẻo dai</span>
-                        <h3 class="text-2xl font-bold text-white mb-3">Yoga Thiền Định</h3>
-                        <p class="text-gray-400 text-sm mb-4">Cân bằng tâm trí, tăng cường sự dẻo dai với không gian yên tĩnh.</p>
-                        <a href="#" class="text-white hover:text-brand font-bold inline-flex items-center gap-2">
-                            Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BỔ SUNG: 4.5 CHƯƠNG TRÌNH LỊCH TẬP (Thực hành Table) -->
-    <section id="schedule" class="py-20 bg-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-2 uppercase">Lịch học tuần này</h2>
-                <div class="w-16 h-1 bg-brand mx-auto"></div>
-            </div>
-
-            <!-- Bảng chứa lịch học (Responsive với overflow-x-auto) -->
-            <div class="overflow-x-auto bg-card rounded-lg border border-gray-800 shadow-lg">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-900 border-b border-gray-700">
-                            <th class="p-4 font-bold text-white uppercase text-sm">Thời gian</th>
-                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Hai</th>
-                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Tư</th>
-                            <th class="p-4 font-bold text-white uppercase text-sm">Thứ Sáu</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-300">
-                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
-                            <td class="p-4 font-medium text-brand">06:00 - 07:30</td>
-                            <td class="p-4">Yoga Thiền Định <br><span class="text-xs text-gray-500">PT. Elena</span></td>
-                            <td class="p-4">Cardio Đốt Mỡ <br><span class="text-xs text-gray-500">PT. David</span></td>
-                            <td class="p-4">Thể Hình Sức Mạnh <br><span class="text-xs text-gray-500">PT. Marcus</span></td>
-                        </tr>
-                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors bg-gray-900/40">
-                            <td class="p-4 font-medium text-brand">17:00 - 18:30</td>
-                            <td class="p-4">Thể Hình Sức Mạnh</td>
-                            <td class="p-4">Zumba Dance</td>
-                            <td class="p-4">Boxing Cơ Bản</td>
-                        </tr>
-                        <tr class="hover:bg-gray-800/50 transition-colors">
-                            <td class="p-4 font-medium text-brand">19:00 - 20:30</td>
-                            <td class="p-4">CrossFit</td>
-                            <td class="p-4">Yoga Thư Giãn</td>
-                            <td class="p-4">Cardio Nâng Cao</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. CALL TO ACTION & FOOTER SECTION (Thực hành Form đầy đủ) -->
-    <footer id="contact" class="bg-card pt-20 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 mb-20 flex flex-col md:flex-row gap-12">
+    <!-- 2. HERO SECTION -->
+    <main class="flex-grow flex flex-col">
+        <section id="home" class="relative min-h-[600px] flex items-center justify-center text-center">
+            <!-- Lớp ảnh nền mờ -->
+            <div class="absolute inset-0 bg-black/70 z-0"></div>
+            <img src="./assets/images/hero_fitness_1773061859337.png" alt="Gym Background" class="absolute inset-0 w-full h-full object-cover -z-10">
             
-            <!-- Phần thông tin -->
-            <div class="w-full md:w-1/2">
-                <h2 class="text-3xl font-bold text-white mb-4">Sẵn sàng thay đổi?</h2>
-                <p class="text-gray-400 mb-6">Đăng ký thành viên ngay hôm nay để nhận ưu đãi giảm giá lên tới 30% cho tháng đầu tiên. Điền thông tin vào form bên cạnh để chuyên viên của chúng tôi liên hệ với bạn.</p>
-                
-                <ul class="text-gray-300 space-y-3">
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-brand"></i> Số 123, Đường ABC, Quận XYZ, Hà Nội</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-brand"></i> 0123.456.789</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-brand"></i> lienhe@fitlife.vn</li>
-                </ul>
+            <!-- Nội dung -->
+            <div class="relative z-10 max-w-3xl px-4 py-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 uppercase">
+                    Phá vỡ <span class="text-brand">giới hạn</span> bản thân
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    Cơ sở vật chất hiện đại, huấn luyện viên chuyên nghiệp. Bắt đầu hành trình thay đổi vóc dáng của bạn ngay hôm nay!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-brand text-white px-8 py-3 rounded text-lg font-bold hover:bg-rose-600 transition-colors">
+                        Đăng ký tập thử MIỄN PHÍ
+                    </a>
+                </div>
             </div>
+        </section>
 
-            <!-- Form đăng ký (Thực hành HTML Forms: input, select, checkbox, submit) -->
-            <div class="w-full md:w-1/2 bg-dark p-6 rounded-lg border border-gray-800 shadow-xl">
-                <h3 class="text-xl font-bold text-white mb-4">Form Đăng Ký Tư Vấn</h3>
-                
-                <form action="#" method="POST" class="space-y-4">
-                    <!-- Trọng tâm thực hành Form -->
-                    <div>
-                        <label for="fullname" class="block text-sm font-medium text-gray-400 mb-1">Họ và tên *</label>
-                        <input type="text" id="fullname" name="fullname" required placeholder="Nhập họ tên của bạn" 
-                            class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-                    </div>
-                    
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-400 mb-1">Số điện thoại *</label>
-                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="Ví dụ: 0987654321" 
-                            class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
+        <!-- 3. FEATURES SECTION (Đăng chép lại Dịch Vụ) -->
+        <section id="features" class="py-20 w-full text-center bg-dark">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-2 uppercase">Tại sao chọn chúng tôi?</h2>
+                <div class="w-16 h-1 bg-brand mx-auto mb-12"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Thẻ 1 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-solid fa-dumbbell text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Thiết bị hiện đại</h3>
+                        <p class="text-gray-400">Trang bị 100% máy móc nhập khẩu mới nhất, đảm bảo hiệu quả tập luyện tối đa.</p>
                     </div>
 
-                    <div>
-                        <label for="goal" class="block text-sm font-medium text-gray-400 mb-1">Mục tiêu tập luyện</label>
-                        <select id="goal" name="goal" class="w-full px-4 py-2 rounded bg-card border border-gray-700 text-gray-300 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-                            <option value="lose_weight">Giảm cân / Đốt mỡ</option>
-                            <option value="gain_muscle">Tăng cơ / Tăng cân</option>
-                            <option value="health">Cải thiện sức khỏe chung</option>
-                            <option value="yoga">Học Yoga / Dẻo dai</option>
-                        </select>
+                    <!-- Thẻ 2 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-solid fa-user-ninja text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">PT Chuyên nghiệp</h3>
+                        <p class="text-gray-400">Đội ngũ huấn luyện viên có chứng chỉ quốc tế, nhiệt tình và theo sát học viên.</p>
                     </div>
 
-                    <div class="flex items-start gap-2 pt-2">
-                        <input type="checkbox" id="agree" name="agree" required class="mt-1 accent-brand">
-                        <label for="agree" class="text-sm text-gray-400">Tôi đồng ý nhận thông tin tư vấn qua điện thoại và email quy định.</label>
+                    <!-- Thẻ 3 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-regular fa-clock text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Mở cửa 24/7</h3>
+                        <p class="text-gray-400">Không gò bó thời gian. Tập luyện bất cứ khi nào phù hợp với lịch trình của bạn.</p>
                     </div>
-
-                    <button type="submit" class="w-full bg-brand text-white py-3 rounded font-bold hover:bg-rose-600 transition-colors mt-4">
-                        Gửi Đăng Ký
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="bg-black py-6 text-center text-sm text-gray-500">
-            <p>&copy; 2026 Rikkei Education. Fullstack JavaScript.</p>
-        </div>
+        <!-- 4. COURSES SECTION (Khóa học mới) -->
+        <section id="courses" class="py-20 w-full bg-card">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white mb-2 uppercase">Khóa học nổi bật</h2>
+                    <div class="w-16 h-1 bg-brand mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Khóa 1 -->
+                    <div class="bg-dark rounded-lg overflow-hidden border border-gray-800 group hover:border-brand transition-colors">
+                        <div class="h-48 bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                            <!-- Ảnh hoặc icon minh họa -->
+                            <img src="./assets/images/weight_lifting_1773061899821.png" alt="Khóa Tăng Cơ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <!-- Overlay gradient để nhấn mạnh -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded-full">-20% Ưu Đãi</div>
+                        </div>
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Lột Xác 30 Ngày</h3>
+                            <p class="text-gray-400 text-sm mb-4">Khóa học đốt mỡ chuyên sâu ngắn hạn. Lên tới 12 buổi/tháng cùng PT cá nhân chuyên nghiệp chuẩn y khoa, giúp lấy lại tự tin chỉ trong 1 tháng.</p>
+                            <div class="flex justify-between items-center text-sm pt-4 border-t border-gray-800">
+                                <span class="bg-card px-2 py-1 rounded text-gray-300 font-medium">12 Buổi/Tháng</span>
+                                <a href="contact.html" class="text-brand font-medium group-hover:underline">Tư vấn ngay <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Khóa 2 -->
+                    <div class="bg-dark rounded-lg overflow-hidden border border-gray-800 group hover:border-brand transition-colors">
+                        <div class="h-48 bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                            <img src="./assets/images/yoga_class_1773061880929.png" alt="Yoga Trị Liệu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-rose-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">HOT NHẤT</div>
+                        </div>
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Yoga Trị Liệu & Thiền</h3>
+                            <p class="text-gray-400 text-sm mb-4">Tập trung cải thiện sức khỏe cột sống, đau mỏi vai gáy. Tái tạo năng lượng, cân bằng tâm trí tinh thần trong nhịp sống hiện đại hối hả.</p>
+                            <div class="flex justify-between items-center text-sm pt-4 border-t border-gray-800">
+                                <span class="bg-card px-2 py-1 rounded text-gray-300 font-medium">Lớp Tự Chọn</span>
+                                <a href="contact.html" class="text-brand font-medium group-hover:underline">Tư vấn ngay <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Khóa 3 -->
+                    <div class="bg-dark rounded-lg overflow-hidden border border-gray-800 group hover:border-brand transition-colors">
+                        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
+                            <i class="fa-solid fa-heart-pulse text-6xl text-gray-600 group-hover:text-brand transition-colors duration-500 z-10 group-hover:scale-110"></i>
+                            <div class="absolute inset-0 bg-gray-900 group-hover:bg-gray-800 transition-colors"></div>
+                        </div>
+                        <div class="p-6 relative">
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Tăng Cơ Thẩm Mỹ</h3>
+                            <p class="text-gray-400 text-sm mb-4">Giáo án Hypertrophy bài bản nhất. Tập trung cực tiểu hóa rủi ro và cực đại hoá sự phát triển cơ bắp, hướng tới vóc dáng thể hình ấn tượng.</p>
+                            <div class="flex justify-between items-center text-sm pt-4 border-t border-gray-800">
+                                <span class="bg-card px-2 py-1 rounded text-gray-300 font-medium">16 Buổi/Tháng</span>
+                                <a href="contact.html" class="text-brand font-medium group-hover:underline">Tư vấn ngay <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-6 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Rikkei Education. Fullstack JavaScript.</p>
     </footer>
 
 </body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ - FitLife</title>
+    <!-- Tailwind CSS v3 via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#f43f5e',
+                        dark: '#111827',
+                        card: '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="bg-card py-4 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-dumbbell text-brand"></i>
+                FIT<span class="text-brand">LIFE</span>
+            </a>
+            
+            <!-- Links -->
+            <div class="hidden sm:flex space-x-6">
+                <a href="index.html" class="hover:text-brand transition-colors text-gray-300 font-medium">Trang chủ</a>
+                <a href="services.html" class="hover:text-brand transition-colors text-white font-medium">Dịch vụ</a>
+                <a href="classes.html" class="hover:text-brand transition-colors text-gray-300 font-medium">Lớp học</a>
+                <a href="contact.html" class="hover:text-brand transition-colors text-gray-300 font-medium">Liên hệ</a>
+            </div>
+            
+            <!-- Nút Đăng ký -->
+            <a href="contact.html" class="bg-brand hover:bg-rose-600 text-white px-5 py-2 rounded font-bold transition-colors">
+                Tham gia ngay
+            </a>
+        </div>
+    </nav>
+
+    <!-- 3. FEATURES SECTION -->
+    <main class="flex-grow flex items-center">
+        <section id="features" class="py-20 w-full text-center">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-white mb-2 uppercase">Tại sao chọn chúng tôi?</h2>
+                <div class="w-16 h-1 bg-brand mx-auto mb-12"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Thẻ 1 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-solid fa-dumbbell text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Thiết bị hiện đại</h3>
+                        <p class="text-gray-400">Trang bị 100% máy móc nhập khẩu mới nhất, đảm bảo hiệu quả tập luyện tối đa.</p>
+                    </div>
+
+                    <!-- Thẻ 2 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-solid fa-user-ninja text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">PT Chuyên nghiệp</h3>
+                        <p class="text-gray-400">Đội ngũ huấn luyện viên có chứng chỉ quốc tế, nhiệt tình và theo sát học viên.</p>
+                    </div>
+
+                    <!-- Thẻ 3 -->
+                    <div class="bg-card p-8 rounded-lg border border-gray-800 hover:border-brand transition-colors">
+                        <i class="fa-regular fa-clock text-4xl text-brand mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Mở cửa 24/7</h3>
+                        <p class="text-gray-400">Không gò bó thời gian. Tập luyện bất cứ khi nào phù hợp với lịch trình của bạn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-6 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Rikkei Education. Fullstack JavaScript.</p>
+    </footer>
+
+</body>
+</html>
